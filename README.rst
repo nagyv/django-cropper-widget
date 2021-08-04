@@ -27,7 +27,7 @@ In your code:
 .. code-block:: python
 
 
-    from cropper_widget.widgetss import CropperWidget
+    from cropper_widget.widgets import CropperWidget
 
     class MyForm(forms.Form):
         image = forms.ImageField(widget=CropperWidget(cropper_options={'aspectRatio': 1}))
