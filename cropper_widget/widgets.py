@@ -29,7 +29,7 @@ class CropperWidget(widgets.ClearableFileInput):
 
         super(CropperWidget, self).__init__(attrs)
         self.img_attrs = img_attrs or {}
-        self.img_attrs.update(img_attrs)
+        self.img_attrs.update(img_attrs or {})
         # cropper options
         cropper_options = cropper_options or {}
         self.cropperOptions = CROPPER_DEFAULT_OPTIONS.copy()
