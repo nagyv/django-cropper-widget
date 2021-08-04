@@ -67,13 +67,12 @@ class CropperWidget(widgets.ClearableFileInput):
         return mark_safe(template % substitutions)
 
     def value_from_datadict(self, data, files, name):
-        img_file = files.get(name)
         cropped_image = data.get('%s-cropped-data' % name)
         if cropped_image:
             image_ct, image_data = cropped_image.split('base64,')
             image_decoded = base64.b64decode(image_data)
             # image = BytesIO(image_decoded)
-            file = ContentFile(image_decoded, name=img_file.name)
+            file = ContentFile(image_decoded, name=data[name])
             return file
 
 
