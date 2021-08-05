@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const croppers = document.querySelectorAll('img.cropper')
     croppers.forEach(function(cropperImg) {
         const input_name = cropperImg.dataset.cropperFor
-        const cropperConf = cropperImg.dataset.cropperConf
+        const cropperConf = JSON.parse(cropperImg.dataset.cropperConf)
         const input = document.querySelector('input[name=' + input_name + ']')
         const croppedInput = document.querySelector('input[name=' + input_name + '-cropped-data]')
         const form = input.closest('form')
